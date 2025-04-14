@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What is the VIX?</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #004085;
+    }
+
+    code {
+      background-color: #eef;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    pre {
+      background-color: #eef;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <a href="index.html">Home</a><br><a href="PostingPowerBIVisualsOnReddit.html">Posting Power BI Visuals On Reddit</a>
+  <h1>What is the VIX and How is it Calculated?</h1>
+
+  <h2>What the VIX Measures:</h2>
+  <ul>
+    <li>The <strong>VIX</strong> reflects the implied volatility of the <strong>S&amp;P 500 index (SPX)</strong>.</li>
+    <li>It's derived from the <strong>prices of SPX options</strong> with near-term expirations.</li>
+    <li>Higher VIX values = higher expected volatility.</li>
+    <li>Lower VIX values = lower expected volatility.</li>
+  </ul>
+
+  <h2>How the VIX is Calculated (Simplified Overview):</h2>
+  <ol>
+    <li>
+      <strong>Out-of-the-money (OTM) SPX options:</strong>
+      <ul>
+        <li>Both call and put options that are not currently profitable.</li>
+        <li>Selected from options that expire in approximately 23 to 37 days.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Implied volatility:</strong>
+      <ul>
+        <li>Backed out from the current prices of the options.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Weighted average of variances:</strong>
+      <ul>
+        <li>Square root of the weighted average of option-implied variances.</li>
+        <li>Converted to a 30-day figure of expected annualized volatility.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>VIX Formula (Conceptual Form):</h2>
+  <pre><code>VIX = 100 × sqrt[(2/T) × Σ(ΔK / K² × e^{RT} × Q(K)) - (1/T) × ((F / K₀) - 1)²]</code></pre>
+  <ul>
+    <li><strong>T</strong>: Time to expiration</li>
+    <li><strong>K</strong>: Strike price</li>
+    <li><strong>ΔK</strong>: Difference between strike prices</li>
+    <li><strong>R</strong>: Risk-free interest rate</li>
+    <li><strong>Q(K)</strong>: Midquote price of each option</li>
+    <li><strong>F</strong>: Forward index level</li>
+    <li><strong>K₀</strong>: First strike below the forward index level</li>
+  </ul>
+
+  <h2>TL;DR Summary:</h2>
+  <ul>
+    <li>The <strong>VIX measures the market’s forecast of volatility</strong> in the S&amp;P 500 over the next month.
+    </li>
+    <li>It’s <strong>calculated from SPX options prices</strong> using a formula that estimates expected volatility.
+    </li>
+    <li>A VIX of 20 implies a 20% expected annual change (up or down) in the S&amp;P 500.</li>
+  </ul>
+
+</body>
+
+</html>

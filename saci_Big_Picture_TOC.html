@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .grid-container a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .grid-container a:hover {
+            background-color: #f0f0f0;
+            color: black;
+        }
+    </style>
+
+    <title>SACI Big Picture</title>
+</head>
+
+<body class="container"><br>
+    <header>
+        <section id="breadcrumbs">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active"><a href="saci_Big_Picture_TOC.html">Table of Contents</a></li>
+            </ol>
+        </section>
+        <section id="titles">
+            <div class="dateTime" id="dateTime"></div>
+            <div>
+                <br><br>
+                <center>
+                    <h3>Smith & Allen Consulting, Inc.</h3>
+                    <h3>Table of Contents</h3>
+                </center>
+                <hr>
+                <br>
+            </div>
+        </section>
+    </header>
+
+
+        <div class="section">
+            <div class="grid-container">
+                <a href="marketing.html">Marketing</a>
+                <a href="sales.html">Sales</a>
+                <a href="professional_services.html">Professional Services</a>
+                <a href="accounting_saci.html">Accounting</a>
+            </div>
+            <br>
+            <div class="section">
+                <div class="grid-container">
+                    <a href="shopify.html">Shopify</a>
+                    <a href="myApps.html">Human Resources</a>
+                    <a href=""></a>
+                    <a href=""></a>
+                </div>
+            </div>
+            <br>
+        </div>
+        <br />
+
+    <script>
+        "use strict";
+
+        // Create Object to represent our h2 element that will hold the Day and Date.
+        const dayDateDisplay = document.createElement("h4");
+
+        // Assign the id="dayDateDisplay"
+        dayDateDisplay.id = "dayDateDisplay";
+
+        // Assign Class text-primary to my dayDateDisplay Object
+        // dayDateDisplay.classList.add('text-primary');
+        dayDateDisplay.style.fontSize = ".75em";
+
+        const weekday = new Array(7);
+        weekday[0] = "Sunday";
+        weekday[1] = "Monday";
+        weekday[2] = "Tuesday";
+        weekday[3] = "Wednesday";
+        weekday[4] = "Thursday";
+        weekday[5] = "Friday";
+        weekday[6] = "Saturday";
+
+        const monthName = new Array(12);
+        monthName[0] = "January";
+        monthName[1] = "February";
+        monthName[2] = "March";
+        monthName[3] = "April";
+        monthName[4] = "May";
+        monthName[5] = "June";
+        monthName[6] = "July";
+        monthName[7] = "August";
+        monthName[8] = "September";
+        monthName[9] = "October";
+        monthName[10] = "November";
+        monthName[11] = "December";
+
+        function showDayDate() {
+            let today = new Date();
+            let dayName = weekday[today.getDay()];
+            let mth = monthName[today.getMonth()];
+            let dayNumber = today.getDate();
+            let yearNumber = today.getFullYear();
+            dayDateDisplay.innerHTML = `${dayName}<span>, </span>${mth}<span> </span>${dayNumber}<span>, </span>${yearNumber}`;
+
+            setTimeout(showDayDate, 10000);
+        }
+
+        // Execute the function created above.
+        showDayDate();
+
+        const centerDayDateDisplay = document.createElement("center");
+
+        centerDayDateDisplay.appendChild(dayDateDisplay);
+
+        console.dir(centerDayDateDisplay);
+        console.dir(dayDateDisplay);
+
+        // Append centerDayDateDisplay
+        document.getElementById("dateTime").appendChild(centerDayDateDisplay);
+    </script>
+
+
+</body>
+
+</html>

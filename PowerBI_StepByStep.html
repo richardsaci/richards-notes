@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+  <link href='style.css' rel='stylesheet'>
+  <title>Power BI - Step By Step</title>
+</head>
+
+<body class="container">
+  <a href="index.html">Home</a>
+
+  <h3>Power BI - Step By Step</h3>
+  <hr>
+
+  <ol>
+    <li>I am using Microsoft Power BI. I need a variable called BegOfYear that holds the value 94443.52 which is data
+      type double.</li>
+    <li>I am using Microsoft Power BI. I have a measure called BegOfYear_Measure. I have another measure called Spot
+      Price. I need a new DAX measure called Variance_Measure. The Variance_Measure will take the Spot Price and
+      subtract the BegOfYear_Measure measure.</li>
+    <ul>
+      <li>Variance_Measure = [Spot Price] - [BegOfYear_Measure]
+      <li>FORMAT([Variance_Measure = [Spot Price] - [BegOfYear_Measure]], "#,##0.00") - Does this work?</li>
+    </ul>
+    </li>
+    <li>Power BI - I am using Microsoft Power BI. How do I format the measure displayed on a Card visual to show the
+      full number without rounding. I need to include comma for thousands sepeartor and 2 decimal places.</li>
+    <ul>
+      <li>Today = FORMAT(TODAY(), "MM/DD/YYYY")</li>
+      <li>Format Card Number to not round.</li>
+      <li>Locate the Display units dropdown. <span><strong>Search for Display Units</strong></span></li>
+      <li>Set this to None for the full number without rounding.</li>
+    </ul>
+    <li>Power BI - I am using Microsoft Power BI. Measure = FORMAT(SUM('TableName'[YourColumn]), "#,##0.00")</li>
+    <li>Power BI - I am using Microsoft Power BI. I am using the card visual. What is the best way to not show the name
+      of the measure that I am displaying on the card? <span><strong>Turn off the call out label.</strong></span></li>
+    <li>Power BI - I am using Microsoft Power BI. I have a measure that displays on the Visual Card. If this measure is
+      negative, I want it to display with a font color of red. Otherwise display as green.</li>
+    <li><a href="https://www.youtube.com/shorts/hd2vecJJkxk">KPI Card with Hover</a></li>
+
+    <code>
+      Measure Color = 
+      IF(
+        [YourMeasure] < 0, 
+        "#FF0000",  -- Red
+        "#008000"   -- Green
+        )
+      </code>
+    <hr>
+    <li>Checklist for connecting to a SharePoint List from Power BI</li>
+    <ol>
+      <li>https://saci-my.sharepoint.com/personal/richard_saci_com</li>
+      <li>Use Microsoft account for authentication</li>
+    </ol>
+    <hr>
+    <li>Days Until Due = DATEDIFF([Today], MAX(Projects[New Due Date]), DAY)</li>
+    <hr>
+    <li>Why use Measures instead of just using the field from the table?</li>
+    <ol>
+      <li></li>
+    </ol>
+    <hr>
+    <li>I am using Microsoft Power BI. I have a measure called Now. Here is the code in the measure Now = NOW(). I need
+      to Format this as text.</li>
+    <ul>
+      <li>NowFormatted = FORMAT(NOW(), "MM/DD/YYYY hh:mm:ss AM/PM") & " EST"</li>
+    </ul>
+    <hr>
+    <li>I am using Microsoft Power BI. I need to Sort the Month Name Column by Month Number</li>
+    <ul>
+      <li>Sort the Month Name Column by Month Number</li>
+      <li>Go to Table View</li>
+      <li>Select the Month Name column</li>
+      <li>In the Column Tools tab, click Sort by Column and choose your Month Number column</li>
+    </ul>
+    <hr>
+    <li>I am using Microsoft Power BI. I have a list of General Ledger account numbers called GL_Accounts. The list has
+      a column for the department name for each general ledger account number. Using Power Query, I have made a
+      duplicate of the GL_Accounts query called departments. Using Power Query I want to make my query called
+      departments only show the first occurance of each department. This way I will end up with a unique list of my
+      departments. How can I do this in Microsoft Power Query?</li>
+    <ol>
+      <li>Open Power Query Editor:</li>
+      <li>In Power BI, go to the Transform Data button to open Power Query Editor.</li>
+      <li>Select the Departments Query:</li>
+      <li>Click on your duplicated query named departments.
+        Remove Duplicates:</li>
+      <li>Click on the Department Name column.</li>
+      <li>Go to the Home tab and click Remove Duplicates.
+        This will keep only the first occurrence of each department, ensuring a unique list.</li>
+      <li>Close & Apply:</li>
+      <li>Click Close & Apply to save changes and load the unique department list into Power BI.</li>
+    </ol>
+    <hr>
+    <li>To insert a blank row in your Power BI report using the InfoRiver Reporting Matrix add-in, follow these steps:
+    </li>
+    <ol>
+      <li>Select the row above where you want to insert the blank row.</li>
+      <li>Right-click on the selected row and look for an option like "Insert Row" (this may vary depending on your
+        version).</li>
+      <li>If there's no direct "Insert Row" option, add a manual row with empty values:
+        <ul>
+          <li>Click on the “+” (Add Row) button in the toolbar if available.</li>
+          <li>Ensure all columns in the new row remain empty or contain placeholder values (e.g., spaces).</li>
+        </ul>
+      </li>
+      <li>Alternatively, insert a blank row using formatting options:
+        <ul>
+          <li>Use conditional formatting to hide the values in a specific row.</li>
+          <li>Adjust row spacing in the settings to visually create a gap.</li>
+        </ul>
+      </li>
+      <li>ChatGPT - What is the best way to show DAX code on an HTML page?</li>
+      <pre>
+        <code>NewestWeekEnding =
+          MAX ( MagnificentSeven[Weekending] )
+          </code>
+      </pre>
+    </ol>
+    <hr>
+
+
+    <ul>
+      <li>I am using Microsoft Power Query. Please show me how to add a column that shows the refresh date and time.</li>
+    <ul>
+        <li>Open Power Query Editor.</li>
+        <li>Click on Add Column in the ribbon.</li>
+        <li>Select Custom Column.</li>
+        <li>In the Custom Column window, enter a column name, such as "Refresh DateTime".</li>
+        <li>In the formula box, enter:</li>
+        <li> = DateTime.LocalNow()</li>
+    </ul></ul>
+    <hr>
+
+  </ol>
+
+
+<hr>
+<p>
+  Yes, Microsoft Power BI can fetch data from a stored procedure that has a parameter. However, handling parameters in Power BI requires some extra steps since Power BI does not natively support passing dynamic parameters to stored procedures in SQL Server. Here’s how you can do it:
+</p>
+<p>
+  
+<p><strong>### **Method 1: Using Power Query (M Language)**</strong></p>
+<ol>
+  <li>1. **Create a Parameter in Power BI:**</li>
+  <ol>
+    <li>- Go to **Power Query Editor** → Click **Manage Parameters** → **New Parameter**.</li>
+    <li>- Define the parameter (e.g., `@MyParameter`) with a default value.</li>
+    <li></li>
+    <li></li>
+  </ol>
+  <li>2. **Use the Parameter in a SQL Query:**</li>
+  <ol>
+    <li>- In **Power Query Editor**, go to **Home** → Click **New Source** → **SQL Server**.</li>
+    <li>- Choose the database and select **Advanced options**.</li>
+    <li>- Instead of selecting a table, write a query:</li>
+    <li>```sql
+      EXEC dbo.MyStoredProcedure @MyParameter = <YourParameterValue>
+      ```</li>
+      <li>- Replace `<YourParameterValue>` with the parameter created in Power BI.</li>
+        <li>- Click **OK** to load the data.</li>
+  </ol>
+  <li>3. **Modify the Query to Use Power BI Parameter Dynamically:**</li>
+  <ol>
+    <li>- In **Power Query Editor**, open the query.</li>
+    <li>- Click **Advanced Editor** and replace the static value with the Power BI parameter:
+      ```m
+      let
+          MyParameterValue = Text.From(YourParameter),
+          Source = Sql.Database("YourServer", "YourDatabase", [Query="EXEC dbo.MyStoredProcedure @MyParameter = " & MyParameterValue])
+      in
+          Source
+      ```</li>
+    <li>- Apply changes and load the data.</li>
+    <li></li>
+  </ol>
+  <li></li>
+</ol>
+   
+   
+   
+   
+
+
+
+
+
+
+<p><strong>### **Method 2: Using a Direct Query with Stored Procedure (With Limitations)**</strong></p>
+<ol>
+  <li>If using **DirectQuery mode**, Power BI may not allow calling a stored procedure directly. Instead, you might need to:</li>
+  <li>- Use a **table-valued function** as a workaround.</li>
+  <li>- Use **a view** that filters based on a Power BI parameter.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+<p><strong>### **Method 3: Using a Custom Power BI Table to Pass Parameters**</strong></p>
+<ol>
+  <li>1. Create a Power BI table with possible parameter values.</li>
+  <li>2. Let the user select a value using a slicer.</li>
+  <li>3. Use **a dynamic SQL statement** in Power Query to pass the selected value.</li>
+</ol>
+
+
+
+
+Would you like help setting up a specific stored procedure in Power BI?
+</p>
+
+
+
+
+
+
+<hr>
+
+
+
+
+
+<p class="title">Thoughts on Power BI Refresh</p>
+<ol>
+  <li>I am using <b>Power BI Desktop</b> and click refresh, what happens?</li>
+  <ul>
+    <li>Does it only get the latest data from the Semantic model?</li>
+    <li>Does it cause the Semantic model to refresh (Use the APIs to get the latest data for each query)?</li>
+  </ul>
+<br>
+
+
+
+
+  
+  <li>I am using <b>Power Query Desktop</b></li>
+  <ul>
+    <li>What are the marching ants doing when I first open Power Query? After taking between 5 and 10 minutes for the marching ants to stop, I have a Alert Bar that says this refresh may be up to 5 days old.</li>
+      <ul><li>Why did it take so long? What was happening?</li></ul>
+    <li>The second time I open Power Query using Transform Data button, <b>Power Query</b> opens almost instantly. What did it not do this time that it did the first time?</li>
+    <li>I click the Refresh Button and the Alert goes away instantly. What got refreshed? It could not have gone back to the APIs or the Semantic Model in that amount of time.</li>
+  </ul>
+  <br>
+  
+
+
+
+
+  <li>I am using <b>app.powerbi.com</b> and refresh the <b>Semantic Model</b>.</li>
+    <ul>
+      <li>My understaning is that this causes the steps that were created in <b>Power Query Desktop</b> to be processed.</li>
+      <li>Is the report in <b>app.powerbi.com</b> always using the latest data in the <b>Semantic Model</b>?</li>
+    </ul>
+<br>
+</ol>
+
+
+
+
+
+<hr>
+
+
+
+
+
+
+<p class="title">Two calculated columns - Variance Amount & Variance Percent</p>
+<p>I have a table with two calculated columns, Measure.Close and Measure.Beginning_Of_Year. Please give me the syntax to build a new calculated column that subtracts Measure.Beginning_Of_Year from Measure.Close.</p>
+<p>In Power BI, to create a new <strong>calculated column</strong> that subtracts one column from another, you can use DAX like this:</p>
+    
+    <pre><code>Difference = TableName[Measure.Close] - TableName[Measure.Beginning_Of_Year]</code></pre>
+
+    <p>Replace <code>TableName</code> with the actual name of your table.</p>
+
+    <p>If you're adding this via the Data view in Power BI:</p>
+    <ol>
+        <li>Go to the <strong>Data</strong> view.</li>
+        <li>Select your table.</li>
+        <li>Click <strong>New column</strong>.</li>
+        <li>Paste in the formula above (with the correct table name).</li>
+    </ol>
+
+    
+    
+<p>Let me know if you’re trying to do this in a <strong>Measure</strong> instead of a column — the approach would be slightly different.</p>
+
+
+<hr>
+<p class="title">Implementing a Dynamic Background Color using DAX</p>
+<pre>
+  <code>BackgroundColor = IF( SELECTEDVALUE('Table'[YourField]) < 0, "#FF0000", "#00FF00")
+    </code>
+</pre>
+<p class="title">Steps to Apply This in Power BI:</p>
+<ol>
+  <li>Create the DAX Measure</li>
+  <li>Open Power BI Desktop, go to Modeling → New Measure, and enter the measure above.</li>
+  <li>Apply Conditional Formatting:</li>
+  <li>Select your table or matrix visual.</li>
+  <li>Go to Visualizations Pane, Build Visual</li>
+  <li>In columns, section, click the drop down arrow next to the field/column you want to add a background.</li>
+  <li>Select Conditional Formatting, Background Color</li>
+  <li>Format Style = Field Value</li>
+  <li>What field should we base this on? Select the measure you created to determine the background color.</li>
+
+  <li>Click OK to apply.</li>
+  <li>If you want a softer red (#FFCCCC) and a deeper green (#008000), modify the measure:</li>
+
+</ol>
+
+<p><a href="Power_BI_Refresh_Thoughts.html">Add Belinda's Transcript Here.</a></p>
+<p>
+
+
+
+
+
+</p>
+<!-- 
+  <li>In the Format pane, expand the Values section.</li>
+  <li>Click the FX button next to Background color.</li>
+  <li>Choose Format by: → Field value.</li>
+  <li>Select your BackgroundColor measure.</li>
+  <li>Example of Custom Hex Colors</li>
+  -->
+    <hr>
+    <p class="title">Card Titles and Subtitles</p>
+    <ol>
+      <li>If you are using a Measure in your title, create it first:
+        <pre>
+    As of Market Close = "As of Market Close on " & FORMAT(TODAY(), "MM/DD/YYYY")
+        </pre>
+      </li>
+      <li>Select the Card Visual on your Canvas</li>
+      <li>Select Visualizations Pane</li>
+      <li>Select Format Visual Button</li>
+      <li>Confirm Title is On</li>
+      <li>Expand Title Option</li>
+    </ol>
+
+
+    <hr>
+
+
+
+    
+</body>
+</html>
+

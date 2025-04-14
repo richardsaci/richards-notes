@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
+    <link rel="stylesheet" href="/style.css">
+    <title>Power BI Visuals On Reddit Archive</title>
+</head>
+<body>
+<a href="index.html">Home</a>
+<br>
+<a href="PostingPowerBIVisualsOnReddit.html">Posting PowerBI Visuals On Reddit</a>
+
+<h3>Power BI Visuals On Reddit Archive</h3>
+
+
+
+<hr>
+
+
+  <!-- Build the Magnificent Seven Visual -->
+  <div class="container">
+    <details>
+      <summary class="title">Build the Magnificent Seven Visual</summary>
+      <ol>
+
+        <li class="title">Build the Magnificent Seven Visual</li>
+        <ol>
+          <li>File name: One Drive > _Tasks ></li>
+          <li class="completed">Modify the variance column to be green for good and red for bad.</li>
+          <li class="completed">Build an Excel file for the Magnificent Seven</li>
+          <li class="completed">Show Friday after market close compared to Beginning of the Year for Mag Seven</li>
+          <li class="completed">The Magnificent Seven stocks refer to seven of the largest and most influential
+            technology
+            companies in
+            the U.S. stock market. They are:</li>
+        </ol>
+        <ol>
+          <li class="completed">Apple (AAPL)</li>
+          <li class="completed">Microsoft (MSFT)</li>
+          <li class="completed">Alphabet (GOOGL, GOOG)</li>
+          <li class="completed">Amazon (AMZN)</li>
+          <li class="completed">Nvidia (NVDA)</li>
+          <li class="completed">Meta Platforms (META)</li>
+          <li class="completed">Tesla (TSLA)</li>
+          <li class="completed">What was the opening stock price for Apple (AAPL) for the year 2025</li>
+          <li class="completed">What was the opening stock price for Microsoft (MSFT) for the year 2025</li>
+          <li class="completed">What was the opening stock price for Alphabet (GOOG) for the year 2025</li>
+          <li class="completed">What was the opening stock price for Amazon (AMZN) for the year 2025</li>
+          <li class="completed">What was the opening stock price for Nvidia (NVDA) for the year 2025</li>
+          <li class="completed">What was the opening stock price for Meta Platforms (META) for the year 2025</li>
+          <li class="completed">What was the opening stock price for Tesla (TSLA) for the year 2025</li>
+          <li class="completed">These companies have been driving a significant portion of the stock market's growth
+            in
+            recent years, particularly in the tech-heavy **S&P 500** and **Nasdaq-100** indices.</li>
+          <li>Add totals at the bottom of the visual.</li>
+          <li>Currently the Power BI Mag Seven does not balance to Market Watch. See Excel file for balancing. One
+            Drive >
+            xxxx > lskdjfl.xlsx</li>
+        </ol>
+
+        <hr>
+        <li class="title">ReBuild the Magnificent Seven Visual Using APIs</li>
+        <ol>
+          <li>File name: One Drive > _Social Media Visuals > Magnificent Seven From API</li>
+          <li>Fetch the data from the API</li>
+          <ol>
+            <li>Apple (AAPL)</li>
+            <li>Microsoft (MSFT)</li>
+            <li>Alphabet (GOOGL, GOOG)</li>
+            <li>Amazon (AMZN)</li>
+            <li>Nvidia (NVDA)</li>
+            <li>Meta Platforms (META)</li>
+            <li>Tesla (TSLA)</li>
+          </ol>
+          <li>Run the Excel File for Mag Seven to compare against the API data.</li>
+          <li>Getting Stock Market Data from RESTFUL API. See notes below on alphavantage</li>
+          <li>How can I handle the problem with the API result set having a changing time series everyday?</li>
+          <ul>
+            <li>What other APIs does AlphaVantage offer? Maybe one that only returns the closing price?</li>
+          </ul>
+
+          <li class="title">Build out the Magnificent Seven Visuals Using SQL Server Database</li>
+          <ol>
+            <li>File Name: One Drive > _Social Media Visuals > Magnificent Seven From API</li>
+            <li>Add Belinda's Calendar.</li>
+            <li>Locate the previous Magnificent Seven Visual.</li>
+            <center>
+              <picture>
+                <image src="MagnificantSevenVersion1.jpg"></image>
+              </picture>
+            </center>
+            <br>
+            <li>I need to have the date in the header textbox show the date that is in the filter so the date and the
+              stock prices are coming from the same row in the table.</li>
+            <li>I am using Microsoft SQL Server. I have a database called SocialMedia. I have a table called
+              MagnigicentServer. I have a date field with the value "2025-03-21". </li>
+            <li>I am using Microsoft Power BI. I have a table called MagnificentSeven. The table has a column called
+              Weekending. I need a measue that fetches the newest date in the Weekending column.</li>
+
+            <li>...</li>
+
+
+          </ol>
+        </ol>
+    </details>
+  </div>
+
+
+
+
+  <!-- Implement SQL DB for Social Media Data -->
+  <div class="container">
+    <details>
+      <summary class="title">Implement SQL DB for Social Media Data</summary>
+      <ol>
+        <li>Is there a version of Azure SQL for Developers that is free? Yes</li>
+        <li><a href=" https://portal.azure.com" target="_blank">portal.azure.com</a></li>
+        <li>Struggled to go beyond portal.azure.com. The only option was pay as you go.</li>
+        <li>Use Local SQL Server and Gateway</li>
+        <li>I am using Microsoft SQL Server. Please prepare a script that will create a database called SocialMedia.
+        </li>
+        <li>This database needs a table called MagnificentSeven</li>
+        <li>The table will have the following columns:</li>
+        <ol>
+          <li>I will need numeric primary key that is auto imcrementing by a value of 1.</li>
+          <li>A date column titled Weekending.</li>
+          <li>A column called AAPL with the datatype of double.</li>
+          <li>A column called AMZN with the datatype of double.</li>
+          <li>A column called META with the datatype of double.</li>
+          <li>A column called MSFT with the datatype of double.</li>
+          <li>A column called NVDA with the datatype of double.</li>
+          <li>A column called GOOG with the datatype of double.</li>
+          <li>A column called TSLA with the datatype of double.</li>
+          <li>I need the ability to insert a record into the table MagnificentSeven with the follow values.</li>
+          <ol>
+            <li>Weekending has a value of 03/21/2025.</li>
+            <li>AAPL has a value of 100.00</li>
+            <li>AMZN has a value of 100.00.</li>
+            <li>META has a value of 100.00.</li>
+            <li>MSFT has a value of 100.00.</li>
+            <li>NVDA has a value of 100.00.</li>
+            <li>GOOG has a value of 100.00.</li>
+            <li>TSLA has a value of 100.00.</li>
+          </ol>
+        </ol>
+        <pre>
+            <code class="sql">
+              -- Create the database
+              CREATE DATABASE SocialMedia;
+              GO
+
+-- Use the database
+USE SocialMedia;
+GO
+
+-- Create the MagnificentSeven table
+CREATE TABLE MagnificentSeven (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Weekending DATE NOT NULL,
+    AAPL FLOAT NOT NULL,
+    AMZN FLOAT NOT NULL,
+    META FLOAT NOT NULL,
+    MSFT FLOAT NOT NULL,
+    NVDA FLOAT NOT NULL,
+    GOOG FLOAT NOT NULL,
+    TSLA FLOAT NOT NULL
+);
+GO
+
+-- Insert a record into the table
+INSERT INTO MagnificentSeven (Weekending, AAPL, AMZN, META, MSFT, NVDA, GOOG, TSLA)
+VALUES ('2025-03-21', 100.00, 100.00, 100.00, 100.00, 100.00, 100.00, 100.00);
+GO
+
+</code>
+            </pre>
+        <hr>
+        <li>Next I will create a table to hold the values for each of these stocks for 1/1/25.</li>
+        <pre>
+            <code class="sql">
+              -- Use the database
+                USE SocialMedia;
+                GO
+
+                -- Create the MagnificentSeven table
+                CREATE TABLE MagnificentSevenBegOfYear (
+                    ID INT IDENTITY(1,1) PRIMARY KEY,
+                    Weekending DATE NOT NULL,
+                    AAPL FLOAT NOT NULL,
+                    AMZN FLOAT NOT NULL,
+                    META FLOAT NOT NULL,
+                    MSFT FLOAT NOT NULL,
+                    NVDA FLOAT NOT NULL,
+                    GOOG FLOAT NOT NULL,
+                    TSLA FLOAT NOT NULL
+                );
+                GO
+
+                -- Insert a record into the table
+                INSERT INTO MagnificentSevenBegOfYear (Weekending, AAPL, AMZN, META, MSFT, NVDA, GOOG, TSLA)
+                VALUES ('2025-01-01', 241.79, 212.28, 668.20, 398.82, 124.92, 170.28, 390.66);
+                GO
+
+                SELECT * FROM MagnificentSevenBegOfYear
+                GO
+            </code>
+          </pre>
+        <li>Make a connection to my SQL Database in Power BI</li>
+        <pre>
+            <code class="sql">SELECT @@SERVERNAME AS ServerName;
+            </code>
+          </pre>
+        <li>DESKTOP-7H06R9R\SQLEXPRESS</li>
+        <li>Update 03-14-2025 Data</li>
+        <li>Update 03-21-2025 Data</li>
+        <li>https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=TGQLDEFHM6Y2E3XA</li>
+        <li>I am using Microsoft SQL Server. I have a database called SocialMedia. I have a table called
+          MagnigicentServer. I have a date field with the value "2025-03-21". I want to update the filed called MSFT
+          with the value of 391.26.</li>
+        <pre>
+            <code class="sql">
+              UPDATE MagnificentSeven
+              SET MSFT = 218.27,
+                  AAPL = 218.27,
+                  AMZN = 196.21,
+                  META = 596.25,
+                  NVDA = 117.70,
+                  GOOG = 166.25,
+                  TSLA = 248.71
+              WHERE [Weekending] = '2025-03-21';
+              GO
+              
+              SELECT * FROM MagnificentSeven;
+              </code>
+          </pre>
+        <hr>
+        <li>I need the closing share price for the following S&P 500 stocks as of last Friday 03-21-2025 (MSFT, AAPL,
+          AMZN, META, NVDA, GOOG, TSLA).</li>
+        <li>I need the closing share price for the following S&P 500 stocks as of last Friday 03-14-2025 (MSFT, AAPL,
+          AMZN, META, NVDA, GOOG, TSLA).</li>
+        <li>I need the closing share price for the following S&P 500 stocks as of last Friday 03-07-2025 (MSFT, AAPL,
+          AMZN, META, NVDA, GOOG, TSLA).</li>
+        <li>I need the closing share price for the following S&P 500 stocks as of last Friday 02-28-2025 (MSFT, AAPL,
+          AMZN, META, NVDA, GOOG, TSLA).</li>
+        <li class="title">I need to rebuild the database to have stock symbol as a column rather than each symbol
+          having its own column.</li>
+        <li>I am using Microsoft SQL Server. My table schema is as follows:</li>
+        <li>TABLE MagSeven (
+          ID INT IDENTITY(1,1) PRIMARY KEY,
+          Weekending DATE NOT NULL,
+          Symbol Char(4) NOT NULL,
+          Closing FLOAT NOT NULL
+        </li>
+        <li>I need to insert the following values:</li>
+        <li>Weekending is 03/21/2025, Sumbol is META, the closing price is 100.</li>
+        <pre><code class="sql">
+          INSERT INTO MagSeven (Weekending, Symbol, Closing)
+VALUES 
+    ('2025-03-21', 'META', 100.0),
+    ('2025-03-21', 'AAPL', 175.5),
+    ('2025-03-21', 'GOOGL', 2800.0),
+    ('2025-03-21', 'AMZN', 3300.5),
+    ('2025-03-21', 'MSFT', 400.75),
+    ('2025-03-21', 'TSLA', 650.0),
+    ('2025-03-21', 'NVDA', 850.25);
+
+         </code></pre>
+        <hr>
+        <pre>
+          <code class="sql">
+            I am using Microsoft SQL Server. My table schema is as follows:</li>
+          <li>TABLE MagSeven (
+            ID INT IDENTITY(1,1) PRIMARY KEY,
+            Weekending DATE NOT NULL,
+            Symbol Char(4) NOT NULL,
+            Closing FLOAT NOT NULL
+            I want to sum all of the numbers in the Closing column for Weekending = '2025-03-21'
+          </code>
+         </pre>
+        <hr>
+        <pre>
+          <code class="sq">
+            SELECT SUM(Closing) AS TotalClosing
+            FROM MagSeven
+            WHERE Weekending = '2025-03-21';
+          </code>
+         </pre>
+        <hr>
+        <li><strong>03-25-2025 - Create the table MagSevenBegOfYear</strong></li>
+        <li>Load the 1-1-2025 data into the table MagSevenBegOfYear</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+        <li>Update the stock prices in the sql table with these values for 03-21-2025</li>
+        </li>
+      </ol>
+      <table>
+        <tr>
+          <th>Stock Symbol</th>
+          <th>Company Name</th>
+          <th>Closing Price (USD)</th>
+        </tr>
+        <tr>
+          <td>AAPL</td>
+          <td>Apple Inc.</td>
+          <td>218.27</td>
+        </tr>
+        <tr>
+          <td>AMZN</td>
+          <td>Amazon.com Inc.</td>
+          <td>197.95</td>
+        </tr>
+        <tr>
+          <td>META</td>
+          <td>Meta Platforms Inc.</td>
+          <td>596.25</td>
+        </tr>
+        <tr>
+          <td>MSFT</td>
+          <td>Microsoft Corporation</td>
+          <td>391.26</td>
+        </tr>
+        <tr>
+          <td>NVDA</td>
+          <td>NVIDIA Corporation</td>
+          <td>115.58</td>
+        </tr>
+        <tr>
+          <td>GOOG</td>
+          <td>Alphabet Inc. Class C</td>
+          <td>166.25</td>
+        </tr>
+        <tr>
+          <td>TSLA</td>
+          <td>Tesla Inc.</td>
+          <td>240.68</td>
+        </tr>
+      </table>
+
+    </details>
+  </div>
+
+
+
+
+
+
+
+
+</body>
+</html>

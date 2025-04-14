@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Power BI Refresh Process Checklist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    h2 {
+      color: #34495e;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 4px;
+    }
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    li {
+      background-color: #fff;
+      margin: 8px 0;
+      padding: 10px;
+      border-left: 5px solid #3498db;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html">Home</a>
+    <h1>✅ Power BI Refresh Process Checklist</h1>
+
+    <h2>1. Refreshing in Power BI Desktop</h2>
+    <ul>
+      <li>Refreshing in Desktop only updates the local data model (semantic model) within the <code>.pbix</code> file.</li>
+      <li>To reflect changes in the Power BI Service, you <strong>must republish</strong> the <code>.pbix</code> file after making updates.</li>
+    </ul>
+
+    <h2>2. Publishing to Power BI Service</h2>
+    <ul>
+      <li>After the report is built and published, <strong>stop using the Desktop version</strong> for regular access or refresh.</li>
+      <li>Users should interact with the report only via <strong>Power BI Service or app</strong>.</li>
+    </ul>
+
+    <h2>3. Refreshing in Power BI Service</h2>
+    <ul>
+      <li>Reports do not refresh data directly—<strong>only the semantic model can be refreshed</strong>.</li>
+      <li>The report in Power BI Service always uses the <strong>latest version of the semantic model</strong>.</li>
+      <li>To refresh the data model in the service, either:
+        <ul>
+          <li>Use <strong>scheduled refresh</strong>, or</li>
+          <li>Trigger a <strong>manual refresh</strong> from Power BI Service.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h2>4. Power Query Considerations</h2>
+    <ul>
+      <li>Initial opening of Power Query may be slow (e.g., 5–10 minutes) if using multiple APIs.</li>
+      <li>Subsequent refreshes tend to be much faster.</li>
+      <li>If refresh is slow, check for queries that reference <code>Today()</code> or use dynamic dates—this may affect performance.</li>
+      <li>Consider replacing dynamic date queries with a static or predefined calendar table to improve performance.</li>
+    </ul>
+
+    <h2>5. General Notes</h2>
+    <ul>
+      <li>Semantic model and report visuals are separated upon publishing.</li>
+      <li>The report in the service only contains visuals, not data—it always queries the current semantic model.</li>
+    </ul>
+  </div>
+</body>
+</html>

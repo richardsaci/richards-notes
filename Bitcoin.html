@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Build the Bitcoin Year To Date Visual</title>
+</head>
+
+<body class="container">
+    <br>
+    <a href="index.html">Home</a> / <a href="PostingPowerBIVisualsOnReddit.html">Posting Power BI Visuals On Reddit</a>
+    <br><br>
+    <h3>Build the Bitcoin Year To Date Visual</h3>
+    <hr>
+    <br>
+
+
+    <!-- Build the Bitcoin Year To Date Visual -->
+    <ol>
+        <li class="documentation">File name: One Drive > _Social Media Visuals > Bitcoin</li>
+        <li class="documentation">API I am using.</li>
+        <ul>
+            <li class="documentation">https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd</li>
+            <li class="documentation">https://docs.coingecko.com/reference/introduction</li>
+            <li class="documentation">https://www.coingecko.com/en/api/pricing</li>
+            <li class="documentation">{"status":{"error_code":10002,"error_message":"API Key Missing"}}</li>
+        </ul>
+
+        <li class="completed">Publish to app.powerbi.com</li>
+        <li class="todo">The Time is not showing up correctly on the app.powerbi.com visual. Seems okay on Power BI
+            Desktop.</li>
+        <li class="todo">I need a refresh date in the data set.</li>
+        <ul>
+            <li>I am using Microsoft Power Query. Please show me how to add a column that shows the refresh date and
+                time.
+            </li>
+        </ul>
+        <ul>
+            <li>Open Power Query Editor.</li>
+            <li>Click on Add Column in the ribbon.</li>
+            <li>Select Custom Column.</li>
+            <li>In the Custom Column window, enter a column name, such as "Refresh DateTime".</li>
+            <li>In the formula box, enter:</li>
+            <li> = DateTime.LocalNow()</li>
+        </ul>
+        <li class="todo">Add For Entertainment purposes only.</li>
+        <li class="todo">Power BI Visuals By saci.com</li>
+        <li class="todo">Get a Free API Key from Coin Gecko</li>
+        <li class="todo">Add % Up or Down, with color background for Gain or Loss</li>
+        <li class="todo"></li>
+        <li class="todo"></li>
+        <li class="todo"></li>
+    </ol>
+
+</body>
+
+</html>

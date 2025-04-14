@@ -1,0 +1,87 @@
+/* Add styles here */
+.todo {
+    color: red;
+  }
+.belinda {
+    color: blueviolet;
+    font-size: 1.25em;
+    font-weight: bold;
+  }
+  .chetna {
+    color: green;
+  }
+  .completed {
+    color: black;
+    text-decoration: line-through;
+  }
+
+  .title {
+    font-size: 1.25em;
+    font-weight: bold;
+    color: blue;
+  }
+  .sub-title {
+    color: blue;
+  }
+  .documentation {
+    font-size: 1em;
+    font-weight: bold;
+    color: lightslategray;
+  }
+
+  h3, h5 {
+    color: blue;
+    text-align: center;
+}
+
+li {
+    margin-bottom: 1%;
+}
+.red {
+  color: red;
+  font-size: 1.5em;
+}
+
+hr {
+  border: 2px solid orange;
+}
+li:hover {
+  background-color: lightblue;
+}
+.sql-code {
+  background-color: #f4f4f4;
+  color: #333;
+  font-family: "Courier New", monospace;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  white-space: pre;
+}
+p:hover {
+  background-color: lightblue;
+}
+
+code {
+  background-color: #eef;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
+pre {
+  background-color: #eef;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+footer  {
+  background-color: #f4f4f4;
+  color: #333;
+  border: solid;
+}
+header {
+  background-color: darkgray;
+  border: solid;
+}
+b {
+  color:cornflowerblue
+}

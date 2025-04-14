@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/style.css">
+    <title>Gas and Diesel Prices</title>
+</head>
+
+<body class="container">
+  <a href="index.html">Home</a> / <a href="PostingPowerBIVisualsOnReddit.html">Posting Power BI Visuals On Reddit</a>
+
+  <br>
+  <br>
+
+    <h3>Gas and Diesel Prices</h3>
+    <hr>
+
+
+
+    <ol>
+        <li>File name: One Drive > _Social Media Visuals > GasPrices.pbix</li>
+        <li>Yes, there are free APIs available for accessing historical gas prices:</li>
+        <ol>
+            <li>U.S. Energy Information Administration (EIA) API**: The EIA offers a free API providing access to a wide
+                range of energy-related data, including historical gasoline prices. Their State Energy Data System
+                (SEDS) contains estimates for average annual gasoline prices for each state dating back to 1970. To use
+                the API, you'll need to register for a free API key.</li>
+            <li><a href="https://www.eia.gov/">U.S. Energy Information Administration</a></li>
+            <li>MetalpriceAPI: This API provides both live and historical gasoline price data in over 150 currencies.
+                They offer a free tier with limited access, which may be suitable for basic usage.</li>
+            <li><a href="https://metalpriceapi.com/">MetalpriceAPI</a></li>
+            <li><a href="https://collectapi.com/api/gasPrice/gas-prices-api"></a></li>
+        </ol>
+        <li><a href="https://www.eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml">eia.gov/petroleum/gasdiesel/includes/gas_diesel_rss.xml</a></li>
+        <li>I am using Microsoft Power BI. How do I ingest an xml file?</li>
+        <li><a href="https://www.eia.gov/opendata/browser/petroleum/pri/spt">www.eia.gov/opendata</a></li>
+    </ol>
+
+
+
+
+
+<div>
+        <ol>
+          <li>Open Power BI Desktop.</li>
+          <li>On the <strong>Home</strong> tab, click <strong>Get Data</strong> → <strong>More...</strong></li>
+          <li>In the <strong>Get Data</strong> window:
+            <ul>
+              <li>Search for or select <strong>XML</strong>.</li>
+              <li>Click <strong>Connect</strong>.</li>
+            </ul>
+          </li>
+          <li>In the file browser, <strong>navigate to your XML file</strong>, select it, then click <strong>Open</strong>.</li>
+          <li><strong>Power Query Editor</strong> will open, and you'll see the hierarchical structure of your XML.</li>
+          <li><strong>Navigate through the nodes</strong> to find the data you're interested in.
+            <ul>
+              <li>Expand tables by clicking the small <strong>expand icon (⏷)</strong> next to columns.</li>
+              <li>You might need to click through several nested tables/lists to get to the actual rows of data.</li>
+            </ul>
+          </li>
+          <li><strong>Clean and transform the data</strong> as needed using Power Query tools:
+            <ul>
+              <li>Rename columns</li>
+              <li>Filter data</li>
+              <li>Change data types</li>
+              <li>Unpivot columns (if needed)</li>
+            </ul>
+          </li>
+          <li>Once ready, click <strong>Close & Apply</strong> in Power Query Editor to load the data into your Power BI model.</li>
+        </ol>
+        
+        
+</div>
+
+
+
+
+
+</body>
+
+</html>

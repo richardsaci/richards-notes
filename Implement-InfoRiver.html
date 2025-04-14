@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+    <title>Implement InfoRiver</title>
+</head>
+
+<body class="container">
+    <a href="index.html">Home</a>
+
+    <h3>Implement InfoRiver for Best Fabrics - Build Income Statement, Balance Sheet, Cash Flow Statement</h3>
+    <hr>
+
+    <!-- Prerequisites -->
+    <details>
+        <summary class="title">Prerequisites</summary>
+        <ol>
+            <li>Does the InfoRiver Blog have any help related to reporting on Microsoft Business Central?</li>
+            <li>Build a P&L / income statement report in Power BI in less than 5 minutes - InfoRiver Blog</li>
+            <li>Brainstorm with Belinda before I start this project.</li>
+            <li>Work with Belinda to investigate pricing and subscribe if possible.</li>
+            <li>Work with Belinda to establish a data connection to Business Central for Fabric Warehouse</li>
+            <li>Build a Financial Statement in Power BI using Fabric Warehouse Data.</li>
+            <li>List of Reasons Belinda does not recommend building Financial Statements using Power BI without a 3rd
+                Party Visual</li>
+                    <ol>
+                        <li>No easily printed financial statement.</li>
+                        <li>Lots of maintenance.</li>
+                        <li>DAX for percentages is complicated. Client would never learn how to make changes.</li>
+                        <li>Subtotals and Totals, Gross Profit, Net Profit, Department Totals, etc.</li>
+                        <li>Formatting the sign to show Credits as positive numbers.</li>
+                    </ol>
+            <li class="completed"><strong>Confirm you are using the correct Business Central DB.</strong></li>
+            <li class="completed"><strong>Which Fabric Warehouse DB is the one to use for latest data?</strong> <span
+                class="red">Fabric Warehouse
+                2024</span></li>
+            <li class="completed">Fabric Warehouse has 1541 records in the General Ledger Entries Table.</li>
+            <li class="completed">Fabric Warehouse 2024 has 4308 records in the General Ledger Entries Table.</li>
+            <li class="completed">Fabric Warehouse 2024 has 48 records in the Chart of Accounts Table.</li>
+            <li class="completed">Fabric Warehouse has ?? records in the Chart of Accounts Table.</li>
+        </ol>
+    </details>
+    <hr>
+
+
+
+
+
+
+
+    <!-- Reference Materials -->
+    <details>
+        <summary class="title">Reference Materials</summary>
+
+        <ol>
+            <li><a href="Quickstart-Guide-Inforiver.pdf">InfoRiver QuickStart Guide</a></li>
+            <li><a href="https://www.youtube.com/watch?v=Oero1qSFPTg" target="_blank">Build your first P&L / Income
+                    statement in Power BI in less than 5 minutes</a></li>
+            <li><a href="Quickstart-Guide-Inforiver.pdf" download="Quickstart-Guide-Inforiver.pdf">InfoRiver QuickStart
+                    Guide - Download</a></li>
+            <li><a href="https://inforiver.com/">InfoRiver.com</a></li>
+            <li><a href="https://inforiver.com/demos/">InfoRiver Demos</a></li>
+            <li><a href="https://inforiver.com/blogs/">InfoRiver Blog</a></li>
+            <li><a href="https://inforiver.com/webinars/">InfoRiver Webinars</a></li>
+            <li><a href="https://community.inforiver.com/">InfoRiver Community</a></li>
+        </ol>
+    </details>
+    <hr>
+
+
+
+
+
+
+    <!-- Training -->
+    <details>
+        <summary class="title">Training</summary>
+        <ol>
+            <li>Consider building this the way Dave is trying or maybe get the InfoRiver product if it is affordable.
+                Specifically the columns.</li>
+            <li>Balance to the statements in Business Central that Ekta built.</li>
+        </ol>
+    </details>
+    <hr>
+
+
+    <h3>Implementation</h3>
+
+
+    <details>
+        <summary>Load Belinda's Calendar from Knowledge Base</summary>
+        <ul>
+            <li class="completed">See Calendar instructions in Knowledge Base.</li>
+        </ul>
+    </details>
+        <hr>
+
+
+
+<details>
+    <summary>generalledgerEntries as General Ledger Entries</summary>
+    
+    
+    <ol>
+        <li class="completed">Rename Query to General Ledger Entries</li>
+        <li class="completed">Correct Data Types</li>
+        <li class="completed">Select and Rename Columns</li>
+        <ol>
+            <li class="completed">entryNumber as Entry Number</li>
+            <li class="completed">postingDate as Posting Date</li>
+            <li class="completed">documentNumber as Document Number</li>
+            <li class="completed">documentType as Document Type</li>
+            <li class="completed">accountNumber as Account Number</li>
+            <li class="completed">description as Account Description</li>
+            <li class="completed">debitAmount as Debit Amount</li>
+            <li class="completed">creditAmount as Credit Amount</li>
+        </ol>
+        <li class="completed">Change the Date format in the General Ledger Entries for Posting Date to short
+            date.</li>
+            <li class="completed">Change the Date format in the Date Table for Date and Week Ending</li>
+            <li class="completed">I changed the data type for Account Number to Whole number for Chart of Accounts,
+                Departments, and
+                General Ledger Entries.</li>
+            </ol>
+        </details>
+        <hr>
+
+        <details>
+            <summary>Create a Departments Table</summary>
+            <ol>
+                <li>In Business Central, the Account Category and the Account Subcategory are both in the Accounts
+                    Query.</li>
+                <li>Duplicate the Chart of Accounts and rename to Departments.</li>
+                <li>Manage Business Central account categories. G/L Account Categories</li>
+                <li>Transform Data</li>
+                <li>How do I make this only show the Sub Categories? Distinct</li>
+                <ol>
+                    <li>...</li>
+                </ol>
+                <li></li>
+            </ol>
+        </details>
+        <hr>
+
+
+        <!-- Create an Accounts Table -->
+        <details>
+            <summary>Create an Accounts Table</summary>
+            <ol>
+                <li>Duplicate the Chart of Accounts and rename to Accounts. In the case of mom's Bank Account
+                    export,
+                    duplicate the Fact Table.</li>
+                <li>Manage Business Central account categories. G/L Account Categories</li>
+                <li>Transform Data</li>
+                <ol>
+                    <li>...</li>
+                    <li>number as Account Number</li>
+                    <li>displayName as Display Name</li>
+                    <li>category as Category</li>
+                    <li>subcategory as Sub Category</li>
+                    <li>accountType as Type</li>
+                    <li>Account number stays as text because you do not know if someone has a leading zero or a
+                        alpha
+                        character or a dash.
+                    </li>
+                    <li>Type filtered to Posting</li>
+                </ol>
+                <li></li>
+            </ol>
+        </details>
+        <hr>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Data Model -->
+        <details>
+            <summary>Data Model</summary>
+            <ol>
+                <li>Date Table to General Ledger Entries</li>
+                <li>Chart of Accounts to General Ledger Entries</li>
+                <li>Departments to General Ledger Entries</li>
+                <picture>
+                    <img src="Data-Modeling-Business-Central-Income-Statement.jpg" alt="" width="90%">
+                </picture>
+            </ol>
+
+        </details>
+
+        <hr>
+
+
+        <!-- Proof Statements -->
+        <details>
+            <summary>Proof Statements</summary>
+            <ol>
+                <li>Export data from Business Central to Excel. Model into a set of statements and compare to InfoRiver
+                    Statements.</li>
+                <li>...</li>
+            </ol>
+        </details>
+        <hr>
+
+        <details>
+            <summary class="title">Marketing and Sales Ideas for InfoRiver Financial Statements</summary>
+            <ol>
+                <li>Does InfoRiver has any helpful sales literature?</li>
+                <li>Monthly posting of Financial Statements build with BC and Cronos posted to LinkedIn</li>
+                <li>...</li>
+            </ol>
+        </details>
+
+    </ol>
+
+</body>
+
+</html>
