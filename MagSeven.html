@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
+    <link rel="stylesheet" href="/style.css">
+    <title>Magnificent Seven</title>
+</head>
+<body class="container">
+  <a href="index.html">Home</a> <b>/</b> <a href="PostingPowerBIVisualsOnReddit.html">Posting Power BI Visuals On Reddit</a>
+
+<h3>Magnificent Seven</h3>
+<hr>
+
+<ol>
+  <li><b>04-14-2025</b></li>
+  <li class="completed">I found an API at AlphaVantage that returns just one day.</li>
+  <li class="completed">Test and see the default dates are. Does it always default to today's date? When I ran the API at 9:21 AM on 4/14/2025 it returned Friday 4/11/2025.</li>
+  <li class="completed">Create a new version of Magnificent Seven_03-28-25.pbix saved as Magnificent Seven_04-14-25.pbix</li>
+  <li class="completed">Delete all queries except Calendar, and Beginning_Of_Year</li>
+  <li class="completed">Test again after the market opens on 4/14/2025 to see if the numbers change. At 10:17 AM the API was still returning latest trading day as 4/11/2025.</li>
+  <li class="completed">Create 7 new queries with the fields listed below.</li>
+  <li class="completed">AAPL, AMZN, GOOG, META, MSFT, NVDA, TSLA</li>
+    <ol>
+      <li class="completed">AAPL, Close</li>
+      <li class="completed">AMZN, Close</li>
+      <li class="completed">GOOG, Close</li>
+      <li class="completed">META, Close</li>
+      <li class="completed">MSFT, Close</li>
+      <li class="completed">NVDA, Close</li>
+      <li class="completed">TSLA, Close</li>
+    </ol>
+  <li class="completed">https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=AAPL&apikey=62V7OAXAP9DEHIP2</li>
+  <li class="completed">https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=AMZN&apikey=62V7OAXAP9DEHIP2</li>
+  <li class="completed">https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=GOOG&apikey=62V7OAXAP9DEHIP2</li>
+  <li class="completed">https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=META&apikey=62V7OAXAP9DEHIP2</li>
+  <li class="completed">https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=MSFT&apikey=62V7OAXAP9DEHIP2</li>
+  <li class="completed">https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=NVDA&apikey=62V7OAXAP9DEHIP2</li>
+  <li class="completed">https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=TSLA&apikey=62V7OAXAP9DEHIP2</li>
+  <li class="completed">Fields I need to end up with in each symbol fetch.</li>
+  <ol>
+    <li class="completed">Symbol</li>
+    <li class="completed">Information</li>
+    <li class="completed">Last Refresh</li>
+    <li class="completed">Close</li>
+    <li class="completed">Output Size</li>
+    <li class="completed">Time Zone</li>
+  </ol>
+  <li class="completed">Query Name: Appended</li>
+  <li class="completed">Query Name: Merge1, Merge Appended and Beginning of Year</li>
+  <li class="completed">As Of Date is an Expression and it needs to be fixed.</li>
+  <ul><li class="completed">I am using Microsoft Power BI. I need a measure called AsOfDate. The date that will be used in this measure is located in the Query AAPL and the column is called Last Refresh. Please give me the code to create the measure.</li></ul>
+    <pre><code>AsOfDate = MAX('AAPL'[Last Refresh])</code></pre>
+    <li class="completed">I am using Microsoft Power BI. Is it possible to use a measure in a text box? See the solution with step by step instructions in ChatGPT history.</li>
+    <pre><code>
+        AsOfDateTitle = "As of " & FORMAT(MAX('AAPL'[Last Refresh]), "MMMM D, YYYY")
+    </code></pre>
+    <li class="completed">Create a VarianceAmt Measure</li>
+    <pre>
+        <code>VarianceAmt = VarianceAmt = Merge1[Close] - Merge1[Beg_Of_Year]</code>
+    </pre>
+    <li class="completed">Create a VariancePct Measure</li>
+    <pre>
+        <code>VariancePct = Merge1[VarianceAmt] / Merge1[Beg_Of_Year]</code>
+    </pre>
+    <li class="todo">Using Excel, Double check the math in VariancePct and VarianceAmt</li>
+    <li class="todo"></li>
+    <li class="todo">Test using the API in a new version Magnificent Seven_04-14-25.pbix sometime after the market closes on Monday 4/14/2025.</li>
+  <li class="todo"></li>
+  <li><a href="Magnificent_Seven_Daily_Procedures.html">Magnificent Seven Daily Procedures</a></li>
+  
+</ol>
+
+
+<!-- Below was done on 04-11-25 -->
+<hr>
+<ol>
+ <li><b>04-11-25</b></li>
+ <li><b>I seem to be having a problem getting the correct closing price.</b></li>
+ <li>I created new test file to do testing and research. File Name: Magnificent Seven_04-11-25_Testing</li>
+ <li>I want to rebuild the steps necessary to get the correct closing price.</li>
+ <li><b>Steps</b></li>
+   <ol>
+     <li>Transform Data</li>
+     <li>New Source, Web</li>
+     <li>Basic Authentication</li>
+     <li>Past in the API for alphavantage<li>
+     <li>Rename Query</li>
+     <li>Next I need to handle the issue with changing column headers. Since the headers have the date in the header, I need to create new column headers.</li>
+     <li><b>Use Headers as First Row</b></li>
+     <li>Rename the needed columns</li>
+     <li>Removed Top Rows</li>
+     <li>Delete the Unneeded columns</li>
+     <li>Changed Type</li>
+     <li>Demoted Headers</li>
+     <li>Changed Type</li>
+     <li><b>Fields I need to end up with in each symbol fetch.</b></li>
+       <ol>
+         <li>Information</li>
+         <li>Symbol</li>
+         <li>Last Refresh</li>
+         <li>Output Size</li>
+         <li>Time Zone</li>
+         <li>Close</li>
+       </ol>
+     <li>The Market Close for 4/10/25 was 381.35</li>
+     <li>Run the Mobile Version of Power BI and see if the numbers change after the Market Closes on 4/11/2025. See Picture in Photos of yesterday's market close.</li>
+   </ol>
+</ol>
+
+<!-- Move 4/11/2025 Here -->
+
+<hr>
+
+      <!-- Power BI Fetches From API -->
+       <p class="title">Power BI Fetches From API</p>
+      <div class="container">
+      
+          <ol>
+            <li class="documentation">File name: One Drive > _Social Media Visuals > Magnificent Seven > Magnificent
+              Seven_03-28-25</li>
+            <li class="documentation">Fetch the data from the API</li>
+            <ul>
+              <li class="documentation">
+                https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AAPL&apikey=TGQLDEFHM6Y2E3XA</li>
+              <li class="documentation">
+                https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=TGQLDEFHM6Y2E3XA</li>
+              <li class="documentation">
+                https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GOOG&apikey=TGQLDEFHM6Y2E3XA</li>
+              <li class="documentation">
+                https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=AMZN&apikey=TGQLDEFHM6Y2E3XA</li>
+              <li class="documentation">
+                https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=NVDA&apikey=TGQLDEFHM6Y2E3XA</li>
+              <li class="documentation">
+                https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=META&apikey=TGQLDEFHM6Y2E3XA</li>
+              <li class="documentation">
+                https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSLA&apikey=TGQLDEFHM6Y2E3XA</li>
+            </ul>
+          </ol>
+      </div>
+      <br>
+
+
+
+      <!-- Build out the Data Model -->
+       <p class="title">Build out the Data Model</p>
+      <div class="container">
+
+          <ol>
+            <li class="completed">Add a column with date, time now.</li>
+            <li class="completed">Correct the data types for the six columns coming from the API.</li>
+
+            <li>I need some DAX that will add the 7 Queries.Closing together for a total.</li>
+            <ul>
+              <li>I am using Microsoft Power BI. I have seven queries (AAPL, MSFT, GOOG, AMZN, NVDA, META, TSLA), each
+                has a field called closing that is data type decimal. Please write a DAX formula that will sum the
+                closing field value in each of the queries.</li>
+            </ul>
+
+          </ol>
+      </div>
+      <br>
+
+
+<hr>
+
+
+      <!-- Build Power BI Mobile Visual -->
+      <div class="container">
+        <p class="title">Build Power BI Mobile Visual</p>
+        
+          <ol>
+            <li class="todo">Use Excel to Mock Up a sample of what my final product should look like.</li>
+            <li>Start with the end in mind.</li>
+            <ol>
+              <li>What fields will I need? Where do these fields come from?</li>
+              <ol>
+                <li><b>Source Query:</b> AAPL, <b>Source Field Name:</b> Close, <b>Report Field Name:</b> Market Closing Price</li>
+                <li><b>Source Query:</b> AMZN, <b>Source Field Name:</b> Close, <b>Report Field Name:</b> Market Closing Price</li>
+                <li><b>Source Query:</b> GOOG, <b>Source Field Name:</b> Close, <b>Report Field Name:</b> Market Closing Price</li>
+                <li><b>Source Query:</b> META, <b>Source Field Name:</b> Close, <b>Report Field Name:</b> Market Closing Price</li>
+                <li><b>Source Query:</b> MSFT, <b>Source Field Name:</b> Close, <b>Report Field Name:</b> Market Closing Price</li>
+                <li><b>Source Query:</b> NVDA, <b>Source Field Name:</b> Close, <b>Report Field Name:</b> Market Closing Price</li>
+                <li><b>Source Query:</b> TSLA, <b>Source Field Name:</b> Close, <b>Report Field Name:</b> Market Closing Price</li>
+                <li><b>Source Query:</b> xxxxxxxxxx, <b>Source Field Name:</b> xxxxxxxxxx, <b>Report Field Name:</b> xxxxxxxxxx</li>
+                <li><b>Source Query:</b> xxxxxxxxxx, <b>Source Field Name:</b> xxxxxxxxxx, <b>Report Field Name:</b> xxxxxxxxxx</li>
+                <li><b>Source Query:</b> Calendar, <b>Source Field Name:</b> xxxxxxxxxx, <b>Report Field Name:</b> xxxxxxxxxx</li>
+            
+              </ol>
+            </ol>
+            <li>Table Design</li>
+            <ol>
+              <li>Symbol</li>
+              <li>Beginning of Year Share Price</li>
+              <li>Spot Price</li>
+              <li>YTD Variance with background color</li>
+              <li>% Up or Down with background color</li>
+            </ol>
+            <li></li>
+          </ol>
+      </div>
+      <br>
+
+<hr>
+
+
+<p class="title">Publish Magnificent Seven_03-28-25.pbix to app.powerbi.com</p>      
+
+
+<!-- Add to Dashboard -->
+ 
+<div class="container">
+<p class="title">Add to Dashboard</p>
+
+
+
+
+      <!-- Power Automate - Captures Power BI Mobile Visual -->
+       <p>Power Automate - Captures Power BI Mobile Visual</p>
+      <div class="container">
+        
+          <ol>
+            <li>Power Automate Desktop or Web Version</li>
+            <li>I think RPC will open the visual and take a screen shot.</li>
+            <li>Saves to One Drive > _Social Media Visuals</li>
+          </ol>
+      </div>
+      <br>
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Proof and Balance My Visuals against another Source.  -->
+       <p>Proof and Balance My Visuals against another Source.</p>
+      <div class="container">
+        
+          <ol>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+            <li>What is the other source?</li>
+            <li>Maybe use Power Automate to Open Excel, Manually Refresh, Save the Spreadsheet, Close Excel</li>
+            <ul>
+              <li>I am using Microsoft Excel and Microsoft Power Automate Desktop. I need to Open a specific Excel
+                speadsheet, Manually calculate the entire workbook, then save the Spreadsheet, then close Excel.</li>
+            </ul>
+          </ol>
+      </div>
+      <br>
+
+
+
+
+      <!-- Power Automate Copies From Symantic Model to SQL Server  -->
+       <p>Power Automate Copies From Symantic Model to SQL Server</p>
+      <div class="container">
+          <ol>
+            <li>...</li>
+            <li>...</li>
+            <li>...</li>
+          </ol>
+      </div>
+      <br>
+
+
+ 
+
+
+
+
+</body>
+</html>
