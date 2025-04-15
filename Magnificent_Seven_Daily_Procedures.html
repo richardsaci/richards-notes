@@ -8,6 +8,33 @@
 
   <link href='style.css' rel='stylesheet'>
     <title>Magnificent Seven Daily Procedures</title>
+    <style>
+      .custom-table-container {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+        margin: 10px;
+      }
+      .custom-table {
+        background-color: lightgray;
+        font-size: 14px;
+        color: black;
+        font-family: Arial, sans-serif;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        width: 100%;
+        max-width: 800px;
+        min-width: 300px;
+        height: auto;
+        max-height: 600px;
+        min-height: 200px;
+      }
+      .custom-table thead, .custom-table tfoot {
+        font-weight: bold;
+      }
+    </style>
 </head>
 <body class="container"> <section id="breadcrumbs">
   <ol class="breadcrumb">
@@ -24,6 +51,49 @@
     
 
 <ol>
+  <li>Visit Yahoo Finance and Gather the Prior Business Day's Closing Price for Each Stock.</li>
+  <ul>
+    <li><a href="https://finance.yahoo.com/quote/AAPL/">AAPL</a></li>
+    <li><a href="https://finance.yahoo.com/quote/AMZN/">AMZN</a></li>
+    <li><a href="https://finance.yahoo.com/quote/META/">META</a></li>
+    <li><a href="https://finance.yahoo.com/quote/MSFT/">MSFT</a></li>
+    <li><a href="https://finance.yahoo.com/quote/NVDA/">NVDA</a></li>
+    <li><a href="https://finance.yahoo.com/quote/GOOG/">GOOG</a></li>
+    <li><a href="https://finance.yahoo.com/quote/TSLA/">TSLA</a></li>
+
+  </ul>
+  <li>Use the following table to capture the data.</li>
+  <div class="custom-table-container">
+    <div class="table-responsive custom-table">
+      <table class="table table-hover mb-0">
+        <caption>Stock Closing Prices</caption>
+        <thead>
+          <tr>
+            <th>Symbol</th>
+            <th>Closing Price</th>
+            <th>Date</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>AAPL</td><td></td><td></td><td></td></tr>
+          <tr><td>AMZN</td><td></td><td></td><td></td></tr>
+          <tr><td>META</td><td></td><td></td><td></td></tr>
+          <tr><td>MSFT</td><td></td><td></td><td></td></tr>
+          <tr><td>NVDA</td><td></td><td></td><td></td></tr>
+          <tr><td>GOOG</td><td></td><td></td><td></td></tr>
+          <tr><td>TSLA</td><td></td><td></td><td></td></tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">End of Table</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+  <li>Use Microsoft Excel Stock History Function to capture yesterday's closing price for the Magnificent Seven.</li>
+      <ul><li>I am using Microsoft Excel. I have the company name in column A and I have the stock Symbol in column b. of my table. I need a stock history function that will return the prior days closing price for each stock if the day is Tuesday through Friday. If today is Monday, the formula needs to get the closing price for the prior Friday.</li></ul>
   <li><b>Capture data for running the report and for proofing.</b></li>
   <ol>
   <li>Update my Magnificent Sever Excel worksheet every Friday at 6PM EST.</li>
