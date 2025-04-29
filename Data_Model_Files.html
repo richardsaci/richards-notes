@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Managing Unneeded Tables in Power BI Model View</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #f9f9f9;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .tip {
+      background-color: #e6f7ff;
+      border-left: 6px solid #1890ff;
+      padding: 10px 15px;
+      margin: 15px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background-color: #fff;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-top: 10px;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+    <a href="index.html">Home</a>
+  <h1>Managing Unneeded Tables and Queries in Power BI Model View</h1>
+
+  <h2>✅ Option 1: Disable Load to Data Model (Recommended)</h2>
+  <p>If a query is only needed within Power Query and you don’t want it to show up in the Model view or be loaded into Power BI:</p>
+  <ol>
+    <li>Go to <strong>Power Query Editor</strong>.</li>
+    <li>In the <strong>Queries pane</strong>, right-click the query/table.</li>
+    <li>Uncheck <strong>“Enable Load”</strong>.</li>
+  </ol>
+  <img src="https://learn.microsoft.com/en-us/power-bi/transform-model/media/desktop-query-overview/enable-load.png" alt="Enable Load option screenshot">
+
+  <div class="tip">
+    <strong>Note:</strong> This keeps the query in Power Query for use by other queries but prevents it from being loaded to the data model or appearing in Model View or the Fields pane.
+  </div>
+
+  <h2>✅ Option 2: Hide Tables from Report View</h2>
+  <p>If you need the table in the model (e.g., for relationships or DAX) but don’t want it visible in the Fields pane:</p>
+  <ol>
+    <li>Go to <strong>Model view</strong> in Power BI.</li>
+    <li>Right-click the table name.</li>
+    <li>Select <strong>“Hide in report view.”</strong></li>
+  </ol>
+
+  <h2>🔁 TL;DR Quick Rule</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Scenario</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Need it in Power Query only?</td>
+        <td>✅ Uncheck <code>Enable Load</code></td>
+      </tr>
+      <tr>
+        <td>Need it in the model but not visible?</td>
+        <td>✅ Use <code>Hide in report view</code></td>
+      </tr>
+      <tr>
+        <td>Need it visible and usable in reports?</td>
+        <td>✅ Leave both settings as-is</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -10,6 +10,12 @@
   .chetna {
     color: green;
   }
+  .ekta {
+    color: slateblue;
+  }
+  .varun {
+    color: orange;
+  }
   .completed {
     color: black;
     text-decoration: line-through;
