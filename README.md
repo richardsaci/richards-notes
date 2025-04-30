@@ -3,6 +3,35 @@ Richard's Misc. Notes
 
 
 
+
+
+
+
+
+
+=LET(
+    symbol, B7,B19
+    today, TODAY(),
+    weekdayNum, WEEKDAY(today, 2),
+    priorDate, IF(weekdayNum=1, today-3, today-1),
+    priceData, STOCKHISTORY(symbol, priorDate, priorDate, 0, 1, 0, 1),
+    IF(ISNUMBER(INDEX(priceData, 2, 2)), INDEX(priceData, 2, 2), "No Data")
+
+
+Migrate Knowledge Base to css grid style menu system for better navigation. 
+
+Talk to Belinda about buying a new MacBook Air for travel and remote work. 
+
+
+Corporate Tax Rates
+
+https://www.napkin.ai/
+
+https://daxstudio.org/
+
+
+
+
 https://www.arromanches360.com/
 
 Moe's richard@saci.com
@@ -142,3 +171,8 @@ US_National_Debt.html
 vix.html
 WhatlsVIX.html
 Yard-Work.html
+
+
+
+
+

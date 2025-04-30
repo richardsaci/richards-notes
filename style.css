@@ -10,6 +10,12 @@
   .chetna {
     color: green;
   }
+  .ekta {
+    color: slateblue;
+  }
+  .varun {
+    color: orange;
+  }
   .completed {
     color: black;
     text-decoration: line-through;
@@ -30,7 +36,7 @@
   }
 
   h3, h5 {
-    color: blue;
+    color:cornflowerblue;
     text-align: center;
 }
 
@@ -83,5 +89,5 @@ header {
   border: solid;
 }
 b {
-  color:cornflowerblue
+  color:cornflowerblue;
 }
