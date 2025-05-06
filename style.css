@@ -91,3 +91,9 @@ header {
 b {
   color:cornflowerblue;
 }
+
+@media print {
+  .page-break {
+    page-break-before: always; /* or page-break-after: always; */
+  }
+}
