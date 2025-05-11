@@ -1,6 +1,17 @@
 Richard's Misc. Notes
 
 
+Reclass Etsy Sales for 2024 with a Journal Entry
+
+function main(workbook: ExcelScript.Workbook) {
+    workbook.getApplication().calculate(ExcelScript.CalculationType.full);
+}
+
+
+
+
+
+
 
 
 
