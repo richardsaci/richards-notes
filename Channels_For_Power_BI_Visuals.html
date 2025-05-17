@@ -8,75 +8,33 @@
   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   />
   <link rel="stylesheet" href="/style.css">
-  <title>Social Media Channels</title>
+  <title>Title Goes Here</title>
 </head>
-<body class="container">
+<body>
   <a href="index.html">Home</a><br><a href="PostingPowerBIVisualsOnReddit.html">Posting Power BI Visuals On Reddit</a>
   
-  <h3>Social Media Channels</h3>
-  
-  
-  <br>
-  <p><b>All of these options are based on being able to get an affordable API for automated posting?</b></p>
+  <h3>New-Page-Template.html</h3>
   
   
   
   
-  <table id="socialMediaTable" class="table table-striped table-bordered">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Order</th>
-        <th scope="col">Name</th>
-        <th scope="col">URL</th>
-        <th scope="col">Comments</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- Rows will be dynamically inserted here -->
-    </tbody>
-  </table>
-
-  <script>
-    // Fetch the JSON file and dynamically build the table
-    fetch('social_media_list.json')
-      .then(response => {
-        // Parse the JSON response from the fetched file
-        return response.json();
-      })
-      .then(data => {
-        // Sort the data by the 'Order' field in ascending order
-        data.sort((a, b) => a.Order - b.Order);
-
-        const tableBody = document.querySelector('#socialMediaTable tbody');
-        data.forEach(item => {
-          const row = document.createElement('tr');
-          row.innerHTML = `
-            <td>${item.Order}</td>
-            <td>${item.Name}</td>
-            <td><a href="${item.URL}">${item.URL}</a></td>
-            <td>${item.comments}</td>
-          `;
-          tableBody.appendChild(row);
-        });
-      })
-      .catch(error => console.error('Error loading JSON:', error));
-  </script>
-
-
-
-<p><b>Questions:</b></p>
-<ol>
-  <li>Is there a cost effective app that will post our visuals on all of these sites at the same time?</li>
-      <ol>
-        <li><a href="https://www.bing.com/search?pglt=929&q=I+am+looking+for+an+app+that+will+post+on+multiple+socal+sites&cvid=32a90b6e5f2e4fbfa3c1376a4b618769&gs_lcrp=EgRlZGdlKgYIABBFGDkyBggAEEUYOdIBCTE2MjQxajBqMagCALACAA&FORM=ANNTA1&PC=EDGEDB">Bing Search</a></li>
-        <li><a href="https://sproutsocial.com/">https://sproutsocial.com/</a></li>
-        <li><a href="https://www.odoo.com/">https://www.odoo.com/</a></li>
-        <li><a href="https://www.canva.com/">https://www.canva.com/</a></li>
-        <li><a href="https://www.capterra.com/">https://www.capterra.com/</a></li>
-        <li><a href=""></a></li>
-        <li><a href=""></a></li>
-      </ol>
+  
+  
+  <!-- Other Channels I need to get. -->
+  <ol>
+    <li>LinkedIn</li>
+    <li>YouTube Shorts</li>
+  <li>TicTok</li>
+  <li>Instagram</li>
+  <li>Twitter</li>
+  <li>Reels?</li>
+  <li>Blu Sky</li>
+  <li>Theads</li>
+  <li>Is there an app that will post my work on all of these at the same time?</li>
 </ol>
+
+
+
 
 </body>
 </html>

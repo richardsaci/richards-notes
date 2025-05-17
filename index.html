@@ -20,8 +20,6 @@
     <h3>Smith & Allen Consulting, Inc.</h3>
     <h3>Richard's Todo List</h3>
   </div>
-  <br>
-  <div id="weather"></div>
   
   <hr>
 
@@ -37,40 +35,36 @@
     <li><a href="https://saci-my.sharepoint.com/:l:/p/richard/FHQsyZy-ah1Pu74-2c7eDqgBH5ClMIdE58vz8zomZi7zIg?nav=ZDk3YTFiODItNDk3Yi00ZjQzLWEyZjEtZDYyMjViNzBlNTQ3">Add a What2Watch</a></li>
     <li><a href="https://saci-my.sharepoint.com/:l:/p/richard/FAteo_PMr3NNiz7mgD7vGCwB0LTg0liVhwCWrhcmAz30Hg?nav=NjJkZGVlYTEtZWRhZi00N2MwLWE3MjYtNmUzODdiOTAyNWI2">Weight Log</a></li>
     <li><a href="https://saci-my.sharepoint.com/:l:/p/richard/FAMYH-lnPnZAlpnVt0Cxl5kBcPM48u83VV8Eyt05i65YCw?nav=YTg3YzEzZTEtOTgzMS00OTVlLWFiNDEtMzk2NTUwOGRmMDk4">Enter Magnificent Seven</a></li>
-    <li><a href="https://saci-my.sharepoint.com/:l:/p/richard/FFwwsBkycL5Gu7QJEIoIgcEBwtn9VOW6j1dkPfwRNxzIXw?nav=ODE3NjRmYTYtM2M0NC00M2Y5LTg4NjEtNGFlMTViY2QyYWM2">Enter Payment from Rich to Mom</a></li>
     <li><a href="Team-India.html">Team India</a></li>
   </ol>
   
   
   <hr>
   
-<p>
+
   Identify what to sync (orders, products, inventory, customers).
   Verify field mapping
   Create or configure test environment in Shopify.
   Setup a dev user in Shopify and provide admin access to developer
-</p>
 
   
+
+Kuldeep,
+The Excel document I sent you yesterday has formulas that get live stock market data every time you do a refresh.
+
+The file needs to be automated. I guess by using Power Automate. Basically the file needs to open every day at 4:30 PM, do a refresh, then save the spreadsheet. I use 4:30 PM EST as the Monday through Friday refresh time. Nothing should happen on weekends.
 
 
   <ol>
     <li><b>Today's Priorities</b></li>
-    <li class="complete">Setup Goofy Server for Team India</li>
-    <li>Email Team India to Test Goofy Server</li>
-    <li><a href="https://learn.microsoft.com/en-us/power-bi/connect-data/service-gateway-onprem-tshoot">Get India Team to help Troubleshoot my Power BI Service</a></li>
-    <li>Pay Bank of America via a Wire.</li>
-    <li>Visit City of Manning Municipal Court regarding Rich's Court Date Tomorrow.</li>
-    <li>Print Excel Worksheet for logging Cash Payments from Rich to Fa Fa. Amount ?</li>
-    <li>Log Mom's Payment from Rich. </li>
-    <li class="todo">Aetna for Dentist in my area</li>
+    <li>Print Label with Date _________ Amount _________</li>
+    <li>Print Excel Worksheet for logging Cash Payments from Rich to Fa Fa</li>
     <li>GoToMyPC - Find the password and test.</li>
     <li>Interest on the American Express Card?</li>
-
-    <li><a href="https://www.youtube.com/@nateherk">youtube.com/@nateherk</a></li>
-    <li><a href="https://n8n.io/">n8n.io</a></li>
+    <li><a href="https://www.youtube.com/@AziatkaTravel">youtube.com/@AziatkaTravel</a></li>
     <li>MongoDB,Cancel the account.</li>
     <li>Heroku, Cancel the account.</li>
+    <li class="todo">Aetna for Dentist in my area</li>
     <li><a href="https://www.squarespacexperts.com/lp/">https://www.squarespacexperts.com/lp/</a></li>
     <li class="todo">Pay for Storage Units, haul off a few items.</li>
     <li><a href="MeetingAgenda_05-02-2025.html">Team India Meeting Agenda for 05-02-2025</a></li>
@@ -610,32 +604,5 @@
                 
                 
               </body>
-              <script>
-    // Fetch the five-day weather forecast for zip code 29001
-    const apiKey = 'eb23f2fd4e480516c41e5cbe64086374'; // Replace with your OpenWeatherMap API key
-    const zipCode = '29001';
-    const weatherDiv = document.getElementById('weather');
-
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?zip=${zipCode},us&units=imperial&appid=${apiKey}`)
-      .then(response => response.json())
-      .then(data => {
-        const forecast = data.list.filter((_, index) => index % 8 === 0); // Get daily forecasts (every 8th item)
-        let html = '<h4>5-Day Weather Forecast</h4><ul class="list-group">';
-
-        forecast.forEach(day => {
-          const date = new Date(day.dt * 1000).toLocaleDateString();
-          const temp = day.main.temp;
-          const description = day.weather[0].description;
-          html += `<li class="list-group-item">${date}: ${temp}°F, ${description}</li>`;
-        });
-
-        html += '</ul>';
-        weatherDiv.innerHTML = html;
-      })
-      .catch(error => {
-        console.error('Error fetching weather data:', error);
-        weatherDiv.innerHTML = '<p>Unable to load weather data.</p>';
-      });
-  </script>
               
               </html>
