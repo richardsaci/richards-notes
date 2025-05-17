@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  />
+    <link rel="stylesheet" href="/style.css">
+    <title>Title Goes Here</title>
+</head>
+<body class="container"><br>
+  <a href="index.html">Home</a> <b>/</b> <a href="Step-By-Step-Power-Automate-Launch-Refresh-Stocks-Excel.html">Step By Step Power Automate Launch Refresh Stocks Excel</a>
+  <br><br>
+  <h3>Step By Step Power Automate Launch Refresh Stocks Excel</h3>
+  <hr>
+  <br>
+<p>
+    I was able to successfully launch and refresh stocks in Excel file using Power Automate. I am sharing steps below on how you can do this on your machine/login. If this doesn’t work I can work with you to set this up. - Varun
+</p>
+
+<ol>
+<li>Create a new Power Automate flow.</li>
+<li>Copy the following code.</li>
+  <li>Excel.LaunchExcel.LaunchAndOpenUnderExistingProcess Path: $'''C:\\PowerAutomate\\Stocks\\My-Tech-Stocks.xlsx''' Visible: True ReadOnly: False Instance=> ExcelInstance</li>
+  <li>WAIT 120</li>
+  <li>Excel.SaveExcel.Save Instance: ExcelInstance</li>
+  <li>Excel.CloseExcel.CloseAndSave Instance: ExcelInstance</li>
+  <li>Paste the code in new flow window.</li>
+  <li>Select the empty space and hit CTRL+V</li>
+  <li>Double click on the first steps to edit File Path.</li>
+  <li>Click on browse button and select your Excel file that you want to refresh.</li>
+  <li>Click SAVE and save the new flow.</li>
+  <li>Test running the flow.</li>
+  <li></li>
+  <li></li>
+</ol>
+
+</body>
+</html>
+
+
